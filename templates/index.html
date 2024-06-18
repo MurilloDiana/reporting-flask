@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <title>Reporte de Atenciones</title>
+</head>
+<body>
+    <h1>Reporte de Atenciones</h1>
+    <div id="reporte"></div>
+    <script>
+        fetch('/api/report')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('reporte').innerHTML = JSON.stringify(data, null, 2);
+            });
+    </script>
+
+</body>
+</html>
